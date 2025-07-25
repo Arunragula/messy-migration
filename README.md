@@ -1,5 +1,5 @@
 
-> **Note to Assessor:** Per the submission guidelines, the detailed refactoring report documenting the changes made can be found in the `CHANGES.md` file. Please start by reviewing that document first.
+> **Note to Assessor:** Per the submission guidelines, the detailed refactoring report documenting the changes made can be found in the `CHANGES.md` file. Please start by reviewing that document.
 >
 > ### **[Click here to view CHANGES.md](CHANGES.md)**
 > 
