@@ -25,6 +25,8 @@ python init_db.py
 python app.py
 
 # The API will be available at http://localhost:5000
+
+
 ```
 
 ### Testing the Application
