@@ -11,6 +11,7 @@ app = Flask(__name__)
 def home():
     return "User Management System"
 
+
 @app.route('/users', methods=['GET'])
 def get_all_users():
     conn = get_db_connection()

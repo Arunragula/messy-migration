@@ -1,8 +1,9 @@
 import sqlite3
 import bcrypt
 
+#Establishes a connection to the database
 def get_db_connection():
-    #Establishes a connection to the database
+    
     conn = sqlite3.connect('users.db')
     conn.row_factory = sqlite3.Row  # This allows accessing columns by name
     return conn
@@ -11,17 +12,19 @@ def close_db_connection(conn):
     #Closes the database connection
     if conn:
         conn.close()
-
+#Hashes a password for storing.
 def hash_password(password):
-    #Hashes a password for storing.
+    
     return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
+#Checks a password against a stored hash
 def check_password(password, hashed_password):
-    #Checks a password against a stored hash
+    
     return bcrypt.checkpw(password.encode('utf-8'), hashed_password)
 
+#Initializes the database and creates the users table.
 def init_db():
-    #Initializes the database and creates the users table.
+    
     conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute('''
@@ -32,6 +35,7 @@ def init_db():
         password TEXT NOT NULL
     )
     ''')
+
     # Add sample users with hashed passwords
     sample_users = [
         ('John Doe', 'john@example.com', hash_password('password123')),
